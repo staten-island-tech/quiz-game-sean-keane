@@ -7,23 +7,25 @@ console.log(DOMSelectors.displayContainer);
 const questions = [
 {
 question : "this is a sample",
-choiceA : 'sample',
-choiceB : 'sample',
-choiceC : 'sample',
+A : 'sample',
+B : 'sample',
+C : 'sample',
 correct : "B"
 },
 {
 question : "this is a sample",
-choiceA : 'sample',
-choiceB : 'sample',
-choiceC : 'sample',
+A : 'sample',
+B : 'sample',
+C : 'sample',
 correct : "A"
 },
 {
 question : "this is a sample",
-choiceA : 'sample',
-choiceB : 'sample',
-choiceC : 'sample',
+A : 'sample',
+B : 'sample',
+C : 'sample',
 correct : "B"
 }
 ];
+
+document.getElementById("container").innerHTML;
