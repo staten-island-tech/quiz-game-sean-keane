@@ -4,8 +4,6 @@ body{
     font-size: 62.5%;
     margin: 0 auto;
     padding: 0 auto;
-    height: 100vh;
-    width: 100vw;
     background-color: brown;
 }
 
@@ -15,6 +13,7 @@ header{
     font-family: 'Courier New', Courier, monospace;
     font-weight: 1000;
     font-size: 10rem;
+    padding-bottom: 5rem;
     color: cornsilk;
 }
 
@@ -23,7 +22,6 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 80vh;
     width: 100vw
 }
 
@@ -51,8 +49,18 @@ button{
 
 .btn{
     margin: 1rem;
-    font-size: 1rem;
+    font-size: 2rem;
+    height: 3rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.finish-btn{
+    height: 3rem;
+    font-family: 'Courier New', Courier, monospace;
+}
