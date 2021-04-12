@@ -1,14 +1,15 @@
 DOMSelectors = {
     displayContainer: document.querySelector(".container"),
+    finishButton: document.querySelector (".finish-btn"),
 };
 
 const questions = [
 {
 question : "this is a sample",
 answers: [
+    {text: 'HTML', correct: false},
+    {text: 'sample1', correct: false},
     {text: 'sample1', correct: true},
-    {text: 'sample1', correct: false},
-    {text: 'sample1', correct: false},
     {text: 'sample1', correct: false},
 ],
 },
@@ -24,10 +25,10 @@ answers: [
 {
 question : "this is a sample 3",
 answers: [
+    {text: 'sample3', correct: false},
+    {text: 'sample3', correct: false},
+    {text: 'sample3', correct: false},
     {text: 'sample3', correct: true},
-    {text: 'sample3', correct: false},
-    {text: 'sample3', correct: false},
-    {text: 'sample3', correct: false},
 ],
 },
 ];
@@ -39,13 +40,14 @@ questions.forEach((item) =>
         `<div id="question-container">
             <div id="question">${item.question}</div>
             <div id="answer-buttons" class="btn-grid">
-                <button class="btn">${item.answers.text}</button>
-                <button class="btn">${item.answers.text}</button>
-                <button class="btn">${item.answers.text}</button>
-                <button class="btn">${item.answers.text}</button>
+                <button class="btn">${item.answers[0]}</button>
+                <button class="btn">${item.answers[1]}</button>
+                <button class="btn">${item.answers[2]}</button>
+                <button class="btn">${item.answers[3]}</button>
             </div>`
 )
 );
 };
 
 init(); 
+
