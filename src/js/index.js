@@ -47,7 +47,9 @@ questions.forEach((item) =>
             </div>`
 )
 );
-};
+}; 
+
+/* This inserts the objects and arrays into the HTML */
 
 init(); 
 
