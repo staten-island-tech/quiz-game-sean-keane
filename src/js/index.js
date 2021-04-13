@@ -5,12 +5,12 @@ DOMSelectors = {
 
 const questions = [
 {
-question : "this is a sample",
+question : "this is a sample 3",
 answers: [
     {text: 'HTML', correct: false},
-    {text: 'sample1', correct: false},
-    {text: 'sample1', correct: true},
-    {text: 'sample1', correct: false},
+    {text: 'sample3', correct: false},
+    {text: 'sample3', correct: true},
+    {text: 'sample3', correct: false},
 ],
 },
 {
@@ -23,12 +23,12 @@ answers: [
 ],
 },
 {
-question : "this is a sample 3",
+question : "this is a sample ",
 answers: [
-    {text: 'sample3', correct: false},
-    {text: 'sample3', correct: false},
-    {text: 'sample3', correct: false},
-    {text: 'sample3', correct: true},
+    {text: 'sample1', correct: false},
+    {text: 'sample1', correct: false},
+    {text: 'sample1', correct: false},
+    {text: 'sample1', correct: true},
 ],
 },
 ];
@@ -40,10 +40,10 @@ questions.forEach((item) =>
         `<div id="question-container">
             <div id="question">${item.question}</div>
             <div id="answer-buttons" class="btn-grid">
-                <button class="btn">${item.answers[0]}</button>
-                <button class="btn">${item.answers[1]}</button>
-                <button class="btn">${item.answers[2]}</button>
-                <button class="btn">${item.answers[3]}</button>
+                <button class="btn">${item.answers[0].text}</button>
+                <button class="btn">${item.answers[1].text}</button>
+                <button class="btn">${item.answers[2].text}</button>
+                <button class="btn">${item.answers[3].text}</button>
             </div>`
 )
 );
