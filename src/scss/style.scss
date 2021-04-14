@@ -4,10 +4,10 @@ body{
     font-size: 62.5%;
     margin: 0 auto;
     padding: 0 auto;
+    padding-bottom: 5vh ;
     background-color: brown;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
 }
 
@@ -70,37 +70,27 @@ button{
 }
 
 .scorecard{
-    position: absolute;
-    z-index: 2;
-    height: 80vh;
-    width: 90vw;
+    height: 10vh;
+    width: 60vw;
     background-color: whitesmoke;
     box-shadow: 0 20px 0.5rem black, 0.6;
-    border-radius: 12%;
-    display: none;
-
-/* THIS IS THE SECTION WE CHANGE AT THE END WITH A REVEAL FUNCTION */
-
+    padding-bottom: 7vh;
 }
 
 .scorecard-text{
     padding-top: 3rem;
-    font-size: 5rem;
+    font-size: 3rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     align-items: center;
-    //justify-content: space-around;
     flex-direction: column;
 }
 
 .title{
-    font-size: 7rem;
+    font-size: 4rem;
 }
 
-.text{
-    padding-top: 2rem;
-}
 
 .score{
-    font-size: 8rem;
+    font-size: 4rem;
 }
