@@ -30,7 +30,6 @@ correctChoice: 'text4',
 
 },
 {
-    {text: 'sample1', correct: false},
 question : "this is a sample",
 answers: {
     text1: 'HTML', 
