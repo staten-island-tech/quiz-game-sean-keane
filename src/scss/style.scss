@@ -4,7 +4,11 @@ body{
     font-size: 62.5%;
     margin: 0 auto;
     padding: 0 auto;
+    padding-bottom: 5vh ;
     background-color: brown;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header{
@@ -47,7 +51,7 @@ button{
     margin: 20;
 }
 
-.btn{
+#choice-btn{
     margin: 1rem;
     font-size: 2rem;
     height: 3rem;
@@ -62,5 +66,41 @@ button{
 
 .finish-btn{
     height: 3rem;
+    font-size: 2rem;
     font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 5vh;
+}
+
+#scorecard{
+    height: 22vh;
+    width: 60vw;
+    background-color: whitesmoke;
+    box-shadow: 0 20px 0.5rem black, 0.6;
+    padding-bottom: 7vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    //justify-content: space-around;
+}
+
+.hide{
+    display: none;
+}
+
+.scorecard-text{
+    padding-top: 3rem;
+    font-size: 3rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 2vh;
+}
+
+.score, .score-denominator, {
+    font-size: 4rem;
+}
+
+.divider {
+    font-size: 2rem;
 }
