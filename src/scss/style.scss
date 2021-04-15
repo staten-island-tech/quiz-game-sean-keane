@@ -51,7 +51,7 @@ button{
     margin: 20;
 }
 
-.btn{
+#choice-btn{
     margin: 1rem;
     font-size: 2rem;
     height: 3rem;
@@ -66,15 +66,21 @@ button{
 
 .finish-btn{
     height: 3rem;
+    font-size: 2rem;
     font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 5vh;
 }
 
 .scorecard{
-    height: 10vh;
+    height: 22vh;
     width: 60vw;
     background-color: whitesmoke;
     box-shadow: 0 20px 0.5rem black, 0.6;
     padding-bottom: 7vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    //justify-content: space-around;
 }
 
 .scorecard-text{
@@ -84,13 +90,13 @@ button{
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding-bottom: 2vh;
 }
 
-.title{
+.score, .score-denominator, {
     font-size: 4rem;
 }
 
-
-.score{
-    font-size: 4rem;
+.divider {
+    font-size: 2rem;
 }
