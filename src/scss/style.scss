@@ -71,7 +71,7 @@ button{
     margin-bottom: 5vh;
 }
 
-.scorecard{
+#scorecard{
     height: 22vh;
     width: 60vw;
     background-color: whitesmoke;
@@ -81,6 +81,10 @@ button{
     flex-direction: column;
     align-items: center;
     //justify-content: space-around;
+}
+
+.hide{
+    display: none;
 }
 
 .scorecard-text{

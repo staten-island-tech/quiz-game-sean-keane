@@ -1,93 +1,81 @@
-DOMSelectors = {
-    displayContainer: document.querySelector(".container"),
-    scoreCard: document.querySelector(".scorecard"),
-    finishButton: document.getElementById ("finish-btn").addEventListener("click", displayScore),
-    buttonLog: document.querySelector(".choice-btn"),
-    
-    //correctChoiceButtons: document.getElementById(".choice-btn1", ".choice-btn2", ".choice-btn3", ".choice-btn4").addEventListener("click", newScore),
-};
+const questionContainerElement = document.getElementById('question-container')
+const questionElement = document.getElementById('question')
+const answerButtonsElement = document.getElementById('answer-buttons'),
 
-let score = 0;
-
-const questions = [
-{
-question : "this is a sample 4",
-answers: 
-    {
-    text1: 'HTML', 
-    text2: 'sample3', 
-    text3: 'gibbons',
-    text4: 'sample3', 
-},
-correctChoice: 'text2',
-
-},
-{
-question : "this is a sample 3",
-answers: {
-    text1: 'HTML', 
-    text2: 'sample2', 
-    text3: 'gibbons',
-    text4: 'sample2', 
-},
-correctChoice: 'text4',
-
-},
-{
-question : "this is a sample2",
-answers: {
-    text1: 'HTML', 
-    text2: 'sample1', 
-    text3: 'gibbons',
-    text4: 'sample1', 
-},
-correctChoice: 'text1',
-
-},
-{
-question : "this is a sample",
-answers: {
-    text1: 'HTML', 
-    text2: 'sample1', 
-    text3: 'gibbons',
-    text4: 'sample1', 
-    },
-correctChoice: 'text3',
-    
-},
-];
-
-const init = function() {
-
-    
-
-    questions.forEach((item) =>
-    DOMSelectors.displayContainer.insertAdjacentHTML(
-        "afterbegin",
-        `<div id="question-container">
-            <div id="question">${item.question}</div>
-            <div id="answer-buttons" class="btn-grid">
-                <button id="choice-btn">${item.answers.text1}</button>
-                <button id="choice-btn">${item.answers.text2}</button>
-                <button id="choice-btn">${item.answers.text3}</button>
-                <button id="choice-btn">${item.answers.text4}</button>
-            </div>`
-      ),
-    );
-};
-
-function newScore(item) {
-    if (item.target.id === questions.correctChoice) {
-        score + 1;
-    };
-
-    return newScore
+function showQuestion(){
+    questionElement.innerText = question.question
+    question.answers.forEach(answer => {
+        const button = document.createElement('button')
+    button.innerText = answer.text
+    button.classList.add('btn')
+    if (answer.correct) {
+      button.dataset.correct = answer.correct
+    }
+    button.addEventListener('click', selectAnswer)
+    answerButtonsElement.appendChild(button)
+  })
 }
+        
+function selectAnswer(e) {
+    const selectedButton = e.target
+    const correct = selectedButton.dataset.correct
+    setStatusClass(document.body, correct)
+    Array.from(answerButtonsElement.children).forEach(button => {
+      setStatusClass(button, button.dataset.correct)
+    })   
+ }
+        
+ function setStatusClass(element, correct) {
+    clearStatusClass(element)
+    if (correct) {
+      element.classList.add('correct')
+    } else {
+      element.classList.add('wrong')
+    }
+  }
 
- function displayScore() {
-
-document.getElementById("score").innerHTML = "pog"
-
-}; 
-
-init();
+  const questions = [
+    {
+    question : "this is a sample 4",
+    answers: [
+        
+        {text1: 'HTML', correct: false},
+        {text2: 'sample3', correct: false},
+        {text3: 'gibbons', correct: true},
+        {text4: 'sample3', correct: false},
+    
+      ]
+    },
+    {
+    question : "this is a sample 3",
+    answers: [
+        
+        {text1: 'HTML', correct: false},
+        {text2: 'sample2', correct: true},
+        {text3: 'gibbons', correct: false},
+        {text4: 'sample2', correct: false},
+        
+      ]
+    },
+    {
+    question : "this is a sample2",
+    answers: [
+        
+        {text1: 'HTML', correct: true},
+        {text2: 'sample1', correct: false},
+        {text3: 'gibbons', correct: false},
+        {text4: 'sample1', correct: false},
+      ]
+    },
+    {
+    question : "this is a sample",
+    answers: [
+        
+        {text1: 'HTML', correct: true},
+        {text2: 'sample1', correct: false},
+        {text3: 'gibbons', correct: false},
+        {text4: 'sample1', correct: false},
+    
+      ]
+    },
+    ];
