@@ -40,10 +40,10 @@ questions.forEach((item) =>
         `<div id="question-container">
             <div id="question">${item.question}</div>
             <div id="answer-buttons" class="btn-grid">
-                <button class="btn">${item.answers[0]}</button>
-                <button class="btn">${item.answers[1]}</button>
-                <button class="btn">${item.answers[2]}</button>
-                <button class="btn">${item.answers[3]}</button>
+                <button class="btn">${item.answers}</button>
+                <button class="btn">${item.answers}</button>
+                <button class="btn">${item.answers}</button>
+                <button class="btn">${item.answers}</button>
             </div>`
 )
 );
