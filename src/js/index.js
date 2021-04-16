@@ -1,53 +1,58 @@
 DOMSelectors = {
     displayContainer: document.querySelector(".container"),
-    scoreCard: document.querySelector(".scorecard"),
+
+    correctChoiceButtons: document.getElementById(".choice-btn1").addEventListener("click", scoreLog),
+    correctChoiceButtons: document.getElementById(".choice-btn1").addEventListener("click", scoreLog),
+    correctChoiceButtons: document.getElementById(".choice-btn1").addEventListener("click", scoreLog),
+
+    // NOT WORKING
+
+    scoreCard: document.getElementById(".scorecard"),
+
     finishButton: document.getElementById ("finish-btn").addEventListener("click", displayScore),
-    buttonLog: document.querySelector(".choice-btn"),
-    
-    //correctChoiceButtons: document.getElementById(".choice-btn1", ".choice-btn2", ".choice-btn3", ".choice-btn4").addEventListener("click", newScore),
 };
 
 const questions = [
 {
-question : "this is a sample",
+question : "this is a sample3",
 answers: [
-    {text: 'HTML', correct: false},
-    {text: 'sample1', correct: false},
-    {text: 'sample1', correct: true},
-    {text: 'sample1', correct: false},
+    {text1: 'HTML', correct: false},
+    {text2: 'sample3', correct: false},
+    {text3: 'css', correct: true},
+    {text4: 'sample3', correct: false},
 ],
 },
 {
 question : "this is a sample 2",
 answers: [
-    {text: 'sample2', correct: true},
-    {text: 'sample2', correct: false},
-    {text: 'sample2', correct: false},
-    {text: 'sample2', correct: false},
+    {text1: 'sample2', correct: true},
+    {text2: 'sample2', correct: false},
+    {text3: 'sample2', correct: false},
+    {text4: 'sample2', correct: false},
 ],
 },
 {
-question : "this is a sample 3",
+question : "this is a sample",
 answers: [
-    {text: 'sample3', correct: false},
-    {text: 'sample3', correct: false},
-    {text: 'sample3', correct: false},
-    {text: 'sample3', correct: true},
+    {text1: 'sampleb', correct: false},
+    {text2: 'samplea', correct: false},
+    {text3: 'sample1', correct: false},
+    {text4: 'samplec', correct: true},
 ],
 },
 ];
 
 const init = function(){
 questions.forEach((item) =>
-    DOMSelectors.displayContainer.insertAdjacentHTML(
-        "afterbegin",
+DOMSelectors.displayContainer.insertAdjacentHTML(
+        "beforeend",
         `<div id="question-container">
             <div id="question">${item.question}</div>
             <div id="answer-buttons" class="btn-grid">
-                <button class="btn">${item.answers}</button>
-                <button class="btn">${item.answers}</button>
-                <button class="btn">${item.answers}</button>
-                <button class="btn">${item.answers}</button>
+                <button id="choice-btn">${item.answers[0].text1}</button>
+                <button id="choice-btn">${item.answers[1].text2}</button>
+                <button id="choice-btn">${item.answers[2].text3}</button>
+                <button id="choice-btn">${item.answers[3].text4}</button>
             </div>`
 )
 );
@@ -55,19 +60,14 @@ questions.forEach((item) =>
 
 init(); 
 
+let initialScore = 0;
 
-function newScore(item) {
-    if (item === questions.correctChoice) {
-        score + 1;
-    };
+function scoreLog(e) {
+ if (e.target.id === questions.answers.correct){
+     initialScore ++
+ }
+} 
 
-    return newScore
+function displayScore() {
+    scoreCard.style.display = "Block";
 }
-
- function displayScore() {
-
-document.getElementById("score").innerHTML = "pog"
-
-}; 
-
-init();
