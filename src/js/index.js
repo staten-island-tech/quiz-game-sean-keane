@@ -8,9 +8,14 @@ DOMSelectors = {
 
     finishBtn: document.querySelector ("hide"),
 
-    scoreCard: document.getElementById ("scorecard"),
+    scoreCard: document.getElementById ("#scorecard"),
 
-    finishBtn: document.querySelector ("finish-btn"),//.addEventListener("click", displayScore),
+    finishBtn: document.getElementById("finish-btn").addEventListener('click', () => {
+        hide.classList.toggle('reveal');
+     }),
+
+
+
 };
 
 const questions = [
@@ -28,7 +33,7 @@ question : "this is a sample 2",
 answers: [
     {text: 'sample2', correct: true},
     {text: 'sample2', correct: false},
-    {text: 'sample2', correct: false},
+    {text: 'sampl', correct: false},
     {text: 'sample2', correct: false},
 ],
 },
@@ -53,7 +58,7 @@ DOMSelectors.displayContainer.insertAdjacentHTML(
                 <button id="choice-btn">${item.answers[0].text}</button>
                 <button id="choice-btn">${item.answers[1].text}</button>
                 <button id="choice-btn">${item.answers[2].text}</button>
-                <button id="choice-btn">${item.answers[1].text}</button>
+                <button id="choice-btn">${item.answers[3].text}</button>
             </div>`
 )
 );
@@ -62,15 +67,12 @@ DOMSelectors.displayContainer.insertAdjacentHTML(
 init(); 
 
 
+
 let initialScore = 0;
 
 function scoreLog(e) {
  if (e.target.id === questions.answers.correct(true)){
      initialScore ++
  }
-} 
-
-  DOMSelectors.finishBtn.addEventListener("click", () => {
-   DOMSelectors.hide.classList.remove("hide");
-}); 
+};
 

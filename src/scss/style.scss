@@ -103,5 +103,9 @@ button{
 }
 
 .hide{
-    display: none;
+   visibility: hidden;
+}
+
+.reveal {
+    visibility: visible;
 }
