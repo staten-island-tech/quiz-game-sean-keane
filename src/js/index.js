@@ -48,6 +48,18 @@ answers: [
 },
 ];
 
+const answerIndex = questions.findIndex(questions => questions.answers === true);
+
+addEventListener.answerIndex (function(){
+
+if(
+    
+){
+
+}
+
+});
+
 const init = function(){
 questions.forEach((item) =>
 DOMSelectors.displayContainer.insertAdjacentHTML(
@@ -65,14 +77,4 @@ DOMSelectors.displayContainer.insertAdjacentHTML(
 };
 
 init(); 
-
-
-
-let initialScore = 0;
-
-function scoreLog(e) {
- if (e.target.id === questions.answers.correct(true)){
-     initialScore ++
- }
-};
 
