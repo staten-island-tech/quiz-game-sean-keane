@@ -2,18 +2,13 @@ DOMSelectors = {
     displayContainer: document.querySelector(".container"),
     displayScore: document.querySelector(".score"),
 
-    //correctChoiceButtons: document.getElementById(".choice-btn").addEventListener("click"),
-
-    // NOT WORKING
+// Add an event listener to the Choices
 
     finishBtn: document.querySelector ("hide"),
 
-    scoreCard: document.getElementById ("#scorecard"),
+    scoreCard: document.getElementById ("scorecard"),
 
-    finishBtn: document.getElementById("finish-btn").addEventListener('click', () => {
-        hide.classList.toggle('reveal');
-     }),
-
+    finishBtn: document.getElementById("finish-btn").addEventListener('click', scoreDisplay),
 
 
 };
@@ -48,18 +43,6 @@ answers: [
 },
 ];
 
-const answerIndex = questions.findIndex(questions => questions.answers === true);
-
-addEventListener.answerIndex (function(){
-
-if(
-    
-){
-
-}
-
-});
-
 const init = function(){
 questions.forEach((item) =>
 DOMSelectors.displayContainer.insertAdjacentHTML(
@@ -77,4 +60,17 @@ DOMSelectors.displayContainer.insertAdjacentHTML(
 };
 
 init(); 
+
+const questionAnswerLog = questions.findIndex(questions => questions.answers === true);
+
+// NOT WORKING
+
+
+const scoreHide = DOMSelectors.scoreCard;
+scoreHide.className = 'hide'
+
+const scoreDisplay = function(){
+    scoreHide.className = 'any'
+};
+
 
