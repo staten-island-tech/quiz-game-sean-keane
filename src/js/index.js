@@ -1,17 +1,40 @@
-DOMSelectors = {
-    displayContainer: document.querySelector(".container"),
-    displayScore: document.querySelector(".score"),
+    let score = 0;
+    
+    const displayContainer = document.querySelector(".container");
 
-// Add an event listener to the Choices
+    const displayScore = document.querySelector(".score");
 
-    finishBtn: document.querySelector ("hide"),
+    const questionContainerElement = document.getElementById("question-container");
 
-    scoreCard: document.getElementById ("scorecard"),
+    const questionElement = document.getElementById('question');
 
-    finishBtn: document.getElementById("finish-btn").addEventListener('click', scoreDisplay),
+    const answerButton1 = document.getElementById("choice-btn1");
+    const answerButton2 = document.getElementById("choice-btn2");
+    const answerButton3 = document.getElementById("choice-btn3");
+    const answerButton4 = document.getElementById("choice-btn4");
 
+    const scoreCard = document.getElementById("scorecard");
 
-};
+    let scoreHide = scoreCard;
+    scoreHide.className = 'hide';
+
+    const finishBtn = document.getElementById("finish-btn").addEventListener("click", function(){
+        scoreCard.classList = 'visible';
+    });
+
+    function init(){
+        let q = questions;
+        questionElement.innerHTML = q.question;
+        answerButton1.innerHTML = q.answers.text[1];
+        answerButton2.innerHTML = q.answers.text[2];
+        answerButton3.innerHTML = q.answers.text[3];
+        answerButton4.innerHTML = q.answers.text[4];
+    }
+
+    /* function answerLog(e) {
+        if (e.target.)
+    } */
+
 
 const questions = [
 {
@@ -43,9 +66,16 @@ answers: [
 },
 ];
 
-const init = function(){
+/* function displayQuestions(q){
+    let q = questions;
+    questionElement.innerHTML = <h1> + q.question + </h1>
+} */
+
+
+
+ /* const init = function(){
 questions.forEach((item) =>
-DOMSelectors.displayContainer.insertAdjacentHTML(
+displayContainer.insertAdjacentHTML(
         "beforeend",
         `<div id="question-container">
             <div id="question">${item.question}</div>
@@ -59,18 +89,13 @@ DOMSelectors.displayContainer.insertAdjacentHTML(
 );
 };
 
-init(); 
+init(); */
 
 const questionAnswerLog = questions.findIndex(questions => questions.answers === true);
 
 // NOT WORKING
 
 
-const scoreHide = DOMSelectors.scoreCard;
-scoreHide.className = 'hide'
 
-const scoreDisplay = function(){
-    scoreHide.className = 'any'
-};
 
 
