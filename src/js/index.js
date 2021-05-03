@@ -51,22 +51,22 @@ answers: [
 },
 ];
 
-const displayContainer = document.querySelector("container");
+const displayContainer = document.querySelector(".container");
 
- const init = function(){
+const init = function(){
     questions.forEach((item) =>
-    displayContainer.insertAdjacentHTML(
-            "beforeend",
+        displayContainer.insertAdjacentHTML(
+            "afterbegin",
             `<div id="question-container">
                 <div id="question">${item.question}</div>
                 <div id="answer-buttons" class="btn-grid">
-                    <button id="choice-btn">${item.answers[0].text}</button>
-                    <button id="choice-btn">${item.answers[1].text}</button>
-                    <button id="choice-btn">${item.answers[2].text}</button>
-                    <button id="choice-btn">${item.answers[3].text}</button>
+                    <button class="choice-btn">${item.answers[0].text}</button>
+                    <button class="choice-btn">${item.answers[1].text}</button>
+                    <button class="choice-btn">${item.answers[2].text}</button>
+                    <button class="choice-btn">${item.answers[3].text}</button>
                 </div>`
     )
     );
     };
-
+    
     init(); 
