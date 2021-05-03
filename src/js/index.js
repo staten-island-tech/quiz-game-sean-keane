@@ -4,13 +4,6 @@ const displayScore = document.querySelector(".score");
 
 const questionContainerElement = document.getElementById("question-container");
 
-const questionElement = document.getElementById('question');
-
-const answerButton1 = document.getElementById("choice-btn1");
-const answerButton2 = document.getElementById("choice-btn2");
-const answerButton3 = document.getElementById("choice-btn3");
-const answerButton4 = document.getElementById("choice-btn4");
-
 const scoreCard = document.getElementById("scorecard");
 
 let scoreHide = scoreCard;
@@ -53,12 +46,12 @@ answers: [
 
 const displayContainer = document.querySelector(".container");
 
-const init = function(){
+const init = function(questionElement, answerButton){
     questions.forEach((item) =>
         displayContainer.insertAdjacentHTML(
             "afterbegin",
             `<div id="question-container">
-                <div id="question">${item.question}</div>
+                <div class="question">${item.question}</div>
                 <div id="answer-buttons" class="btn-grid">
                     <button class="choice-btn">${item.answers[0].text}</button>
                     <button class="choice-btn">${item.answers[1].text}</button>
@@ -67,6 +60,12 @@ const init = function(){
                 </div>`
     )
     );
+    
+   /*  const questionElement = document.getElementsByClassName('question');
+
+   const answerButton = document.getElementsByClassName('choice-btn').addEventListener("click", function(){
+
+   }); */
     };
     
     init(); 
