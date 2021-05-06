@@ -56,12 +56,12 @@ const displayquestions = function(){
     questions.forEach(
         (item) => {
 
-            const answers = [item.answers];
+         const answers = [];
 
-            for(letter in item.answers){
+          for(letter in item.answers){
 
                 answers.push(
-                    item.answers//(a, b, c, d)
+                    item.answers
                 )
 
             }
@@ -80,29 +80,3 @@ const displayquestions = function(){
 
 displayquestions();
 
-/* 
-const init = function(questionElement, answerButton){
-    questions.forEach((item) =>
-        displayContainer.insertAdjacentHTML(
-            "afterbegin",
-            `<div id="question-container">
-                <div class="question">${item.question}</div>
-                <div id="answer-buttons" class="btn-grid">
-                    <button class="choice-btn">${item.answers[0].text}</button>
-                    <button class="choice-btn">${item.answers[1].text}</button>
-                    <button class="choice-btn">${item.answers[2].text}</button>
-                    <button class="choice-btn">${item.answers[3].text}</button>
-                </div>`
-    )
-    );
-    
-   /*  const questionElement = document.getElementsByClassName('question');
-
-   const answerButton = document.getElementsByClassName('choice-btn').addEventListener("click", function(){
-
-   });
-    };
-    
-    init();
-    
-     */
