@@ -89,8 +89,9 @@ button{
     font-size: 3rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
+    justify-content: center;
     align-items: center;
-    flex-direction: column;
+    //flex-direction: column;
     padding-bottom: 2vh;
 }
 

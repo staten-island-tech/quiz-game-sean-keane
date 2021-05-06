@@ -10,42 +10,75 @@ let scoreHide = scoreCard;
 scoreHide.className = 'hide';
 
 const finishBtn = document.getElementById("finish-btn").addEventListener("click", function(){
-    scoreCard.classList = 'visible'; // This can be anything
+    scoreCard.classList = 'reveal'; // This can be anything
 });
 
 
 const questions = [
 {
 question : "this is a sample",
-answers: [
-    {text: 'HTML', correct: false},
-    {text: 'sample3', correct: false},
-    {text: 'css', correct: true},
-    {text: 'sample3', correct: false},
-],
+answers: {
+    a: 'HTML', 
+    b: 'sample3', 
+    c: 'css', 
+    d: 'sample3'
+},
+correct: 'a'
 },
 {
 question : "this is a sample 2",
-answers: [
-    {text: 'sample2', correct: true},
-    {text: 'sample2', correct: false},
-    {text: 'sampl', correct: false},
-    {text: 'sample2', correct: false},
-],
+answers: {
+    a: 'sample2',
+    b: 'sample2', 
+    c: 'sampl', 
+    d: 'sample2'
+},
+correct: 'c'
 },
 {
 question : "this is a sample3",
-answers: [
-    {text: 'sampleb', correct: false},
-    {text: 'samplea', correct: false},
-    {text: 'sample1', correct: false},
-    {text: 'samplec', correct: true},
-],
+answers: {
+    a: 'sampleb', 
+    b: 'samplea',
+    c: 'sample1', 
+    d: 'samplec'
+},
+correct: 'd'
 },
 ];
 
 const displayContainer = document.querySelector(".container");
 
+const displayquestions = function(){
+
+    const output = [];
+
+    questions.forEach(
+        (item) => {
+
+            const answers = [];
+
+            for(letter in item.answers){
+
+                answers.push()
+
+            }
+
+           output.push(
+               ` <div class="question">${item.question}</div>
+               <button class="choice-btn">${answers.join('')}</button>`
+           )
+
+        }
+    );
+
+        displayContainer.innerHTML = output.join('')
+
+};
+
+displayquestions();
+
+/* 
 const init = function(questionElement, answerButton){
     questions.forEach((item) =>
         displayContainer.insertAdjacentHTML(
@@ -65,7 +98,9 @@ const init = function(questionElement, answerButton){
 
    const answerButton = document.getElementsByClassName('choice-btn').addEventListener("click", function(){
 
-   }); */
+   });
     };
     
-    init(); 
+    init();
+    
+     */
