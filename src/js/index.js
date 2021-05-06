@@ -56,11 +56,13 @@ const displayquestions = function(){
     questions.forEach(
         (item) => {
 
-            const answers = [];
+            const answers = [item.answers];
 
             for(letter in item.answers){
 
-                answers.push()
+                answers.push(
+                    item.answers//(a, b, c, d)
+                )
 
             }
 
