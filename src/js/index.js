@@ -91,12 +91,13 @@ function showResults(){
       // find selected answer
       const answerContainer = answerContainers[itemNumber];
       const selector = `input[name=question${itemNumber}]:checked`;
+      console.log(answerContainer);
       const userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
-      // if answer is correct
+     
       if(userAnswer === item.correct){
         numCorrect++;
-      }
+      } 
     });
 
     // show number of correct answers out of total
