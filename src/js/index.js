@@ -1,6 +1,5 @@
-let score = 0;
 
-const displayScore = document.querySelector(".score");
+const displayContainer = document.querySelector(".container");
 
 const questionContainerElement = document.getElementById("question-container");
 
@@ -9,9 +8,7 @@ const scoreCard = document.getElementById("scorecard");
 let scoreHide = scoreCard;
 scoreHide.className = 'hide';
 
-const finishBtn = document.getElementById("finish-btn").addEventListener("click", function(){
-    scoreCard.classList = 'reveal'; // This can be anything
-});
+ const submitButton = document.getElementById("finish-btn").addEventListener("click", showResults);
 
 
 const questions = [
@@ -47,21 +44,23 @@ correct: 'd'
 },
 ];
 
-const displayContainer = document.querySelector(".container");
-
 const displayquestions = function(){
 
     const output = [];
 
     questions.forEach(
-        (item) => {
+        (item, itemNumber) => {
 
          const answers = [];
 
           for(letter in item.answers){
 
                 answers.push(
-                    item.answers
+                    `<label>
+              <input type="radio" name="question${itemNumber}" value="${letter}">
+              ${letter} :
+              ${item.answers[letter]}
+            </label>`
                 )
 
             }
@@ -69,14 +68,44 @@ const displayquestions = function(){
            output.push(
                ` <div class="question">${item.question}</div>
                <button class="choice-btn">${answers.join('')}</button>`
-           )
+           );
 
         }
     );
 
-        displayContainer.innerHTML = output.join('')
+        displayContainer.innerHTML = output.join('');
 
 };
+
+
+function showResults(){
+
+    // gets answer containers from quiz
+    const answerContainers = displayContainer.querySelectorAll('.answers');
+
+    let numCorrect = 0;
+
+    
+    questions.forEach( (item, itemNumber) => {
+
+      // find selected answer
+      const answerContainer = answerContainers[itemNumber];
+      const selector = `input[name=question${itemNumber}]:checked`;
+      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+      // if answer is correct
+      if(userAnswer === item.correct){
+        numCorrect++;
+      }
+      else{}
+    });
+
+    // show number of correct answers out of total
+    scoreCard.innerHTML = `${numCorrect} out of ${questions.length}`;
+
+    scoreCard.classList = 'reveal';
+  };
+
 
 displayquestions();
 
