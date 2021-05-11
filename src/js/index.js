@@ -97,7 +97,6 @@ function showResults(){
       if(userAnswer === item.correct){
         numCorrect++;
       }
-      else{}
     });
 
     // show number of correct answers out of total
